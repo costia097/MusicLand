@@ -1,0 +1,30 @@
+.main-boxes{
+  padding-top: 60px;
+  border: 2px solid yellow;
+}
+
+.box-style{
+  padding: 80px;
+}
+
+.box-style button{
+  margin-left: 50px;
+}
+
+.box-style img{
+  border-radius: 50%;
+}
+
+.my-pagination /deep/ .ngx-pagination .current {
+  background: #1c1e3a;
+}
+
+.img-container{
+  transition: .5s ease;
+  opacity: 1;
+}
+
+.img-container:hover{
+  opacity: 0.3;
+  cursor: pointer;
+}

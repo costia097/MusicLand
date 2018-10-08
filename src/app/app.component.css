@@ -1,0 +1,24 @@
+.main-body{
+  height: 100%;
+  padding-left: 0;
+}
+
+.main-content{
+  height: 100%;
+  color: white;
+}
+
+.main-row{
+  height: 100%;
+}
+
+.main-content-wrapper{
+  height: 100%;
+}
+
+.main-header-navigation{
+}
+
+.spacer-style{
+  padding-top: 50px;
+}

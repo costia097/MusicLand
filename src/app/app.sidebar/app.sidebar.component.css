@@ -1,0 +1,19 @@
+.sidebar-wrapper{
+  height: 185px;
+  width: 200px;
+  float: left;
+  border-right: 2px solid yellow;
+  transition: all 0.5s ease;
+  color: white;
+  padding: 10px;
+}
+
+.sidebar-wrapper ul{
+  padding-top: 40px;
+  list-style-type: none;
+}
+
+.hide-sidebar{
+  width: 0;
+  display: none;
+}
