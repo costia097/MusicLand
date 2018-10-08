@@ -3,7 +3,6 @@ import {RouterModule} from '@angular/router';
 import {AppTrackInfoComponent} from './app.track.info/app-track-info.component';
 import {AppTrackListComponent} from './app.track-list/app.track.list.component';
 import {AppUserProfile} from './app.user.profile/app.user.profile';
-import {AppCategoriesComponent} from './app.categories/app.categories.component';
 import {AppHomeComponent} from './app.home/app.home.component';
 
 @NgModule({
@@ -33,11 +32,6 @@ import {AppHomeComponent} from './app.home/app.home.component';
         path: 'userProfile',
         pathMatch: 'full',
         component: AppUserProfile
-      },
-      {
-        path: 'categories',
-        pathMatch: 'full',
-        component: AppCategoriesComponent
       }
     ])
   ],

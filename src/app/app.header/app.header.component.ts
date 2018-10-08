@@ -5,18 +5,12 @@ import {Component} from '@angular/core';
   template: `
     <div class="main-header">
       <div class="row main-header-navigation">
-        <div class="col-3">
-          <button class="btn  btn-style" routerLink="">Home</button>
-        </div>
-        <div class="col-3">
-          <button class="btn btn-style" routerLink="tracks" routerLinkActive="active-btn">All tracks</button>
-        </div>
-        <div class="col-3">
-          <button class="btn btn-style" routerLink="categories" routerLinkActive="active-btn">Categories</button>
-        </div>
-        <div class="col-3">
-          <button class="btn btn-style">Home</button>
-        </div>
+        <ul>
+          <li routerLink="">Home</li>
+          <li routerLink="tracks" routerLinkActive="active-btn">All tracks</li>
+          <li routerLink="categories" routerLinkActive="active-btn">Categories</li>
+          <li>Home</li>
+        </ul>
       </div>
     </div>
   `,

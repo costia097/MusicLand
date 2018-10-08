@@ -1,0 +1,18 @@
+.main-content{
+  border: 2px solid yellow;
+  padding-left: 15%;
+}
+
+.main-content ul {
+
+}
+
+.main-content ul li{
+  display: inline;
+  padding: 20px;
+  cursor: pointer;
+}
+
+.main-content-active{
+  border-bottom: 2px solid darkblue;
+}

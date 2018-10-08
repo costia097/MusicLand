@@ -10,21 +10,25 @@ import {AppContentRouterModule} from './app.content.router.module';
 import {AppTrackListComponent} from './app.track-list/app.track.list.component';
 import {AppUserProfile} from './app.user.profile/app.user.profile';
 import {AppSidebarComponent} from './app.sidebar/app.sidebar.component';
-import {AppCategoriesComponent} from './app.categories/app.categories.component';
 import {AppHeaderComponent} from './app.header/app.header.component';
 import {AppHomeComponent} from './app.home/app.home.component';
+import {CategoryModule} from './categories.module/category.module';
 
 @NgModule({
   declarations: [
-    AppComponent, AppTrackInfoComponent, AppTrackListComponent, AppUserProfile, AppSidebarComponent, AppCategoriesComponent, AppHeaderComponent, AppHomeComponent
+    AppComponent, AppTrackInfoComponent, AppTrackListComponent,
+    AppUserProfile, AppSidebarComponent,
+    AppHeaderComponent, AppHomeComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     NgxPaginationModule,
     RouterModule,
-    AppContentRouterModule
+    AppContentRouterModule,
+    CategoryModule
   ],
+  exports: [AppTrackListComponent, AppTrackInfoComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

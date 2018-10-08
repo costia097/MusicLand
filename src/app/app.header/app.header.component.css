@@ -1,7 +1,24 @@
 .active-btn{
+  border: yellow solid 3px;
   border-bottom: 5px solid green;
+  background: blue;
 }
 
 .main-header{
   padding-top: 50px;
+}
+
+.main-header-navigation{
+padding-left: 30%;
+}
+
+.main-header-navigation ul{
+  list-style-type: none;
+}
+
+.main-header-navigation ul li{
+  padding: 20px;
+  display: inline;
+  cursor: pointer;
+  border: blueviolet solid 2px;
 }
