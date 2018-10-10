@@ -1,3 +1,11 @@
 .main-content{
   border: yellow 2px solid;
 }
+
+.films-header{
+  padding-left: 47%;
+}
+
+.header-btn-style{
+  margin-left: 30%;
+}

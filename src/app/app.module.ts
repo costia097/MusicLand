@@ -13,20 +13,21 @@ import {AppSidebarComponent} from './app.sidebar/app.sidebar.component';
 import {AppHeaderComponent} from './app.header/app.header.component';
 import {AppHomeComponent} from './app.home/app.home.component';
 import {CategoryModule} from './categories.module/category.module';
+import {SharedModule} from './shared.module/shared.module';
 
 @NgModule({
   declarations: [
-    AppComponent, AppTrackInfoComponent, AppTrackListComponent,
+    AppComponent, AppTrackInfoComponent,
     AppUserProfile, AppSidebarComponent,
     AppHeaderComponent, AppHomeComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    NgxPaginationModule,
     RouterModule,
     AppContentRouterModule,
-    CategoryModule
+    CategoryModule,
+    SharedModule
   ],
   exports: [AppTrackListComponent, AppTrackInfoComponent],
   providers: [],
