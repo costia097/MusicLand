@@ -1,5 +1,4 @@
 import {Component} from '@angular/core';
-import {p} from '@angular/core/src/render3';
 
 @Component({
   selector: 'app-home',
@@ -17,7 +16,7 @@ import {p} from '@angular/core/src/render3';
 
     <div>
       AUDIO
-      <audio id="audio-player" #audioPlayer (timeupdate)="timeUpdateAudioPlayer(audioPlayer,progressBar)" preload="none" >
+      <audio id="audio-player" #audioPlayer (timeupdate)="timeUpdateAudioPlayer(audioPlayer,progressBar)">
         <source src="http://localhost:9090/test/abc.mp3"/>
       </audio>
       <button class="btn btn-style" (click)="onBtnPlay(audioPlayer)">Play</button>
@@ -27,7 +26,7 @@ import {p} from '@angular/core/src/render3';
 
       <span>
         <progress class="progress-bar" #progressBar value="0" max="1" (click)="tryChangeProgress(progressBar,$event,audioPlayer)"></progress>
-        {{audioPlayer.duration/60.0}}
+        {{currentTimeParsed}}:{{durationParsed}} secs
       </span>
     </div>
   `,
@@ -35,30 +34,27 @@ import {p} from '@angular/core/src/render3';
 })
 export class AppHomeComponent {
 
-  tryChangeProgress(element: any, click: any) {
-    // console.log('tryChangeProgress ' + element.offsetTop);
-    // console.log('tryChangeProgress ' + element.offsetLeft);
+  currentTimeParsed: string;
+  durationParsed: string;
+
+  tryChangeProgress(element: any, click: any, audioPlayer: any) {
     //TODO change values min = 15 max = 174 length = 159
     console.log('tryChangeProgress X' + click.clientX);
     let mouseX = click.clientX - 15;
     let progress = (100 / 159 * mouseX) / 100;
     console.log('Progress ' + progress);
-    element.value = progress;
-    // console.log('tryChangeProgress Y' + click.clientY);
+    let newTime = audioPlayer.duration * progress;
+    console.log('New value time is: ' + newTime);
+    audioPlayer.currentTime = newTime;
   }
 
   timeUpdateAudioPlayer(audioPlayer: any, progressBar: any) {
-    // console.log('timeUpdateAudioPlayer');
+    this.currentTimeParsed = parseFloat(audioPlayer.currentTime).toFixed(0);
+    this.durationParsed = parseFloat(audioPlayer.duration).toFixed(0);
+    console.log('currentTimeParsed ' + this.currentTimeParsed);
     let duration = audioPlayer.duration;
     let currentTime = audioPlayer.currentTime;
-
-    let currentProgressValue = (100 / duration * currentTime) / 100;
-    // console.log('timeUpdateAudioPlayer Duration: ' + duration);
-    // console.log('timeUpdateAudioPlayer Current time: ' + currentTime);
-    // console.log('currentProgressValue is: ' + currentProgressValue);
-    progressBar.value = currentProgressValue;
-    let progressBarValue = progressBar.value;
-    // console.log('timeUpdateAudioPlayer progressBarValue: ' + progressBarValue);
+    progressBar.value = (100 / duration * currentTime) / 100;
   }
 
   onBtnPlay(element: any) {
